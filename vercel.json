@@ -16,7 +16,6 @@
     "env": {
       "DB_USER": "db_user_aeromax ",
       "DB_PASSWORD": "23iKe8tjnqu0wrTr",
-      "DB_HOST": "@aeromax.yrmep.mongodb.net",
       "DB_NAME": "aeromax_db"
     }
   }
