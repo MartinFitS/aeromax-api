@@ -8,6 +8,8 @@ const { logErrors , errorHandler , wrapErrors }  = require("./utils/middleware/e
 
 const notFoundHandler = require("./utils/middleware/notFoundHandler");
 
+const cors = require("cors");
+
 app.use(express.json());
 
 //routes
@@ -17,6 +19,7 @@ aeromaxApi(app);
 app.use(notFoundHandler);
 
 //errores
+app.use(cors());
 app.use(logErrors);
 app.use(wrapErrors)
 app.use(errorHandler);
