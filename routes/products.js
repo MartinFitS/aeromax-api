@@ -5,7 +5,8 @@ const {
     createProductSchema,
     updateProductSchema
 } = require("../utils/schemas/products.js");
-
+const cors = require("cors");
+const corsOptions = require("../index");
 const validationHandler = require("../utils/middleware/validationHandler");
 
 const {cacheResponse} = require("../utils/cacheResponse");
@@ -21,7 +22,7 @@ const aeromaxApi = (app) => {
     const productsService = new ProductsService;
 
     //Obtener todos los productos
-    router.get("/", async function (req, res, next) {
+    router.get("/",cors(corsOptions), async function (req, res, next) {
         cacheResponse(res, FIVE_MINUTES_IN_SECONDS);
         const { tags } = req.query;
         try {
